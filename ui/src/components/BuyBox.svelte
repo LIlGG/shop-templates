@@ -56,6 +56,7 @@
   );
   let externalLinkUrl = $derived(productQuery.data?.externalLinkUrl);
   let hasExternalLink = $derived(!!externalLinkUrl && externalLinkUrl.length > 0);
+  let externalLinkButtonText = $derived(productQuery.data?.externalLinkButtonText);
 
   const getInitialSelectedSpecs = (): Record<string, string> => {
     const initial: Record<string, string> = {};
@@ -194,7 +195,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            {$i18n.t('buyBox.externalBuyNow')}
+            {externalLinkButtonText || $i18n.t('buyBox.externalBuyNow')}
           </a>
         {:else}
           <button
@@ -203,7 +204,7 @@
             disabled
             aria-disabled="true"
           >
-            {$i18n.t('buyBox.externalBuyNow')}
+            {externalLinkButtonText || $i18n.t('buyBox.externalBuyNow')}
           </button>
         {/if}
       </div>
