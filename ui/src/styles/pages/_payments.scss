@@ -155,6 +155,29 @@
     font-size: var(--shop-font-size-xl);
     color: var(--shop-color-primary);
   }
+
+  &__row {
+    &--rejected {
+      color: var(--shop-gray-400, #9ca3af);
+      font-size: var(--shop-font-size-sm, 0.875rem);
+
+      span:last-child {
+        font-size: var(--shop-font-size-xs, 0.75rem);
+      }
+    }
+  }
+
+  &__rejected {
+    color: var(--shop-color-error, #7a5050);
+    font-weight: 500;
+  }
+
+  &__rejected-reason {
+    margin: calc(-1 * var(--shop-spacing-xs)) 0 var(--shop-spacing-sm);
+    color: var(--shop-color-error, #7a5050);
+    font-size: var(--shop-font-size-xs, 0.75rem);
+    line-height: 1.4;
+  }
 }
 
 .shop-qrcode-container {
